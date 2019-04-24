@@ -1,8 +1,8 @@
 typedef struct node* link;
 struct node
 {
-  int item;
-  link next;
+	int item;
+	link next;
 };
 typedef link Node;
 void initNodes(int);
@@ -12,4 +12,4 @@ void insertNext(link, link);
 link deleteNext(link);
 link Next(link);
 int Item(link);
-  
+

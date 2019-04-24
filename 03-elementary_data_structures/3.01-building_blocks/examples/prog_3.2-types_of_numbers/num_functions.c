@@ -3,5 +3,5 @@
 
 Number randNum()
 {
-  return rand();
+	return rand()%100;
 }

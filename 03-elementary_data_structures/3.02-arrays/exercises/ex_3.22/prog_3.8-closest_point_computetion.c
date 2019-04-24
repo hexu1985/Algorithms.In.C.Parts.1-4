@@ -9,30 +9,30 @@
 
 float randFloat()
 {
-  return 1.0*rand()/RAND_MAX;
+	return 1.0*rand()/RAND_MAX;
 }
 
 int main(void)
 {
-  float d = FLT_MAX, d2;
-  int i, j, cnt = 0, n = N, ii, jj;
-  point *a = malloc(n * sizeof(*a));
+	float d = FLT_MAX, d2;
+	int i, j, cnt = 0, n = N, ii, jj;
+	point *a = malloc(n * sizeof(*a));
 
-  for (i = 0; i < n; i++)
-    {
-      a[i].x = randFloat();
-      a[i].y = randFloat();
-    }
-  for (i = 0; i < n-1; i++)
-    for (j = i+1; j < n; j++)
-      if ((d2=distance(a[i], a[j])) < d)
+	for (i = 0; i < n; i++)
 	{
-	  d = d2;
-	  ii = i;
-	  jj = j;
+		a[i].x = randFloat();
+		a[i].y = randFloat();
 	}
+	for (i = 0; i < n-1; i++)
+		for (j = i+1; j < n; j++)
+			if ((d2=distance(a[i], a[j])) < d)
+			{
+				d = d2;
+				ii = i;
+				jj = j;
+			}
 	cnt++;
 	printf("Closest points: %f, %f and %f, %f\n",
-	       a[ii].x, a[ii].y, a[jj].x, a[jj].y);
-  return 0;
+			a[ii].x, a[ii].y, a[jj].x, a[jj].y);
+	return 0;
 }

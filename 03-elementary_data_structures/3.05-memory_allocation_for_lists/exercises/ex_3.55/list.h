@@ -1,8 +1,8 @@
 typedef struct node link;
 struct node
 {
-  int item;
-  link *next;
+	int item;
+	link *next;
 };
 
 link *new_node(int);

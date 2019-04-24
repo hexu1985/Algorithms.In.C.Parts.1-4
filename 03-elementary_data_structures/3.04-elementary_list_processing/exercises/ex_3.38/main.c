@@ -4,34 +4,34 @@
 
 link *list_copy(link *t)
 {
-  link *new, *u = NULL, *head;
+	link *new, *u = NULL, *head;
 
-  while (t != NULL)
-    {
-      if (u == NULL)
+	while (t != NULL)
 	{
-	  u = new_node(t->item);
-	  head = u;
+		if (u == NULL)
+		{
+			u = new_node(t->item);
+			head = u;
+		}
+		else
+		{
+			new = new_node(t->item);
+			u->next = new;
+			u = new;
+		}
+		t = t->next;
 	}
-      else
-	{
-	  new = new_node(t->item);
-	  u->next = new;
-	  u = new;
-	}
-      t = t->next;
-    }
-  return head;
+	return head;
 }
 int main(void) 
 {
-  link *t, *u;
+	link *t, *u;
 
-  t = new_list();
-  print_list(t);
-  t = t->next;
-  u = list_copy(t);
-  print_list(u);
-  return 0;
+	t = new_list();
+	print_list(t);
+	t = t->next;
+	u = list_copy(t);
+	print_list(u);
+	return 0;
 }
 

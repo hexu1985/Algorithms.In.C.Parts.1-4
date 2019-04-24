@@ -4,51 +4,51 @@
 
 link *new_node(int n)
 {
-  link *t;
+	link *t;
 
-  t = malloc(sizeof(link));
-  if (t != NULL)
-    {
-      t->item = n;
-      t->next = NULL;
-    }
-  return t;
+	t = malloc(sizeof(link));
+	if (t != NULL)
+	{
+		t->item = n;
+		t->next = NULL;
+	}
+	return t;
 }
 
 link *new_list()
 {
-  int n;
-  link *head, *new, *t = NULL;
+	int n;
+	link *head, *new, *t = NULL;
 
-  printf("Enter list members: ");
-  while (!feof(stdin))
-    {
-      scanf("%d ",&n);
-      new = new_node(n);
-      if (t == NULL)
+	printf("Enter list members: ");
+	while (!feof(stdin))
 	{
-	  t = new;
-	  head = t;
+		scanf("%d ",&n);
+		new = new_node(n);
+		if (t == NULL)
+		{
+			t = new;
+			head = t;
+		}
+		else
+		{
+			t->next = new;
+			t = t->next;
+		}
 	}
-      else
-	{
-	  t->next = new;
-	  t = t->next;
-	}
-    }
-  printf("\n");
-  return head;
+	printf("\n");
+	return head;
 }
 
 void print_list(link *t)
 {
-  if (t->item)
-    while (t != NULL)
-    {
-      printf("%d ", t->item);
-      t = t->next;
-    }
-  else
-    printf("Empty list");
-  printf("\n");
+	if (t->item)
+		while (t != NULL)
+		{
+			printf("%d ", t->item);
+			t = t->next;
+		}
+	else
+		printf("Empty list");
+	printf("\n");
 }

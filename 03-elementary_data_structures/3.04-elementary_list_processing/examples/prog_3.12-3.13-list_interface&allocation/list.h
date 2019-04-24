@@ -2,8 +2,8 @@ typedef struct node* link;
 typedef int itemType;
 struct node
 {
-  itemType item;
-  link next;
+	itemType item;
+	link next;
 };
 typedef link Node;
 void initNodes(int);

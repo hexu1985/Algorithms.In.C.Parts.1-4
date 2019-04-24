@@ -5,11 +5,11 @@
 
 int main(void) 
 {
-  link t, u;
+	link t, u;
 
-  initNodes(N);
-  t = newNode(1);
-  u = newNode(2);
-  insertNext(t, u);
-  return 0;
+	initNodes(N);
+	t = newNode(1);
+	u = newNode(2);
+	insertNext(t, u);
+	return 0;
 }

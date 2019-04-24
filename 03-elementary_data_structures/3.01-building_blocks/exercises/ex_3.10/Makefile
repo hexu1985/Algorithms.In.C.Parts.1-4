@@ -1,26 +1,20 @@
-# compiler
+
+RM = rm -f
 CC = gcc
-# flags
-CFLAGS = -Wall -g
-# general dependencies
-DEPS = point.h triangle.h
-# object files
-OBJ = main.o point_func.o triangle_func.o
-# main file name
-TARGET = main
-# out file name
-OUT = out
-# standard
-STD = -std=c99
+CFLAGS = -Wall -g -DNDEBUG -std=c99
+INCLUDES = 
+LDFLAGS = -lm
+LDPATH =
+VPATH = 
 
+SOURCES = $(shell ls *.c)
+PROGS = out
 
-all : $(TARGET) 
+all: $(PROGS)
+	@echo "PROGS = $(PROGS)" 
 
-$(TARGET): $(OBJ)
-	$(CC) $(CFLAGS) $(STD) -o $(OUT) $(OBJ) -lm
-
-$(OBJ): $(DEPS)
-
-.PHONY : clean
 clean:
-	rm -rf $(wildcard *.o) $(wildcard *~)
+	$(RM) $(PROGS)
+
+$(PROGS): $(SOURCES) $(LIB_SOURCES)
+	$(CC) -o $@ $(CFLAGS) $(INCLUDES) $^ $(LDFLAGS) $(LDPATH)

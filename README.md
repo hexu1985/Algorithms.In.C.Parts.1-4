@@ -3,3 +3,5 @@
 ![封面1](cover1.jpg)
 ![封面2](cover2.jpg)
 
+#### 参考项目
+<https://github.com/caisah/Sedgewick-algorithms-in-c-exercises-and-examples>
